@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+#Sub-dir e.g: /cmsms
+#RewriteBase /
+#
+# 301 Redirect all requests that don't contain a dot or trailing slash to
+# include a trailing slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?page=$1 [QSA]
